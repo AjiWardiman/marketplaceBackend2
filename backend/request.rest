@@ -1,0 +1,99 @@
+//Create a user
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "admin",
+    "email": "admin@gmail.com",
+    "password": "1234",
+    "confPassword": "1234"
+
+}
+
+###
+//get All user
+GET http://localhost:5000/users
+
+###
+//get single user
+GET http://localhost:5000/users/cfffe2e4-87c4-4f8c-b110-eef12d9e5167
+
+###
+//update user
+PATCH http://localhost:5000/users/1af0f2f8-5401-4a53-b190-53e144c9c0ba
+Content-Type: application/json
+
+{
+    "name": "rendi updated 2",
+    "email": "rendi2@gmail.com",
+    "password": "1234",
+    "confPassword": "1234"
+}
+
+###
+//delete a user
+DELETE http://localhost:5000/users/1af0f2f8-5401-4a53-b190-53e144c9c0ba
+
+###
+//Login admin
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "admin@gmail.com",
+    "password": "1234"
+}
+
+###
+//Login User
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "rudi@gmail.com",
+    "password": "1234"
+}
+
+###
+GET http://localhost:5000/me
+
+###
+//logout
+DELETE  http://localhost:5000/logout
+
+//search product
+###
+GET http://localhost:5000/products?search_query=category&page=0&limit=10
+
+//get All Product
+###
+POST http://localhost:5000/products
+
+###
+//get Product User
+POST http://localhost:5000/productUser
+
+###
+//create transaction
+POST http://localhost:5000/checkout
+Content-Type: application/json
+{
+    "name": "admin",
+    "address": "solo",
+    "phone": "08995232430",
+    "note": "tolong cepat dikirim",
+    "order": "2"
+
+}
+
+###
+//get All transaction
+GET http://localhost:5000/checkout
+
+###
+//get transaction user
+GET http://localhost:5000/checkout/(uuid)
+
+###
+DELETE http://localhost:5000/checkout/c0425418-411e-41c9-bb19-acc683ca6821
+
